@@ -1,0 +1,539 @@
+/* ここから下に記載していく */
+
+body {
+    font-family: "Helvetica Neue",
+        Arial,
+        "Hiragino Kaku Gothic ProN",
+        "Hiragino Sans",
+        Meiryo,
+        sans-serif;
+    color: #222;
+    font-size: 16px;
+}
+
+a { 
+    color: #fff; 
+    text-decoration: none; 
+    transition: 1.0s;
+}
+a:hover {
+    color: #2a6bbf;
+}
+
+h2 {
+    font-size: 24px;
+    margin: 0 auto 30px;
+    text-align: center;
+    color: #2a6bbf;
+}
+
+#header {
+    background-image: url("../img/mainbg.jpg");
+}
+@media screen and (max-width: 765px) {
+    #header {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        height: 600px;
+    }
+   }
+#header .headerInner {
+    display: flex;
+    max-width: 1200px;
+    justify-content: space-between;
+    margin: auto;
+    align-items: flex-start;
+    padding: 20px;
+    height: 600px;
+    position: relative;
+}
+@media screen and (max-width: 765px) {
+    #header .headerInner {
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+        padding: 0;
+    }
+}
+
+#header .headerInner h1 {
+    margin-right: auto;
+}
+@media screen and (max-width: 765px) {
+    #header .headerInner h1 {
+        padding: 15px;
+    }
+}
+#header .headerInner h1 img {
+    display: block;
+}
+#header .headerInner h1 a {
+    transition: .8s;
+}
+#header .headerInner h1 a:hover {
+    opacity: 0.6;
+}
+
+#nav-drawer{
+    display: none;
+}
+@media screen and (max-width: 765px) {
+    #nav-drawer{
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 10px;
+    }
+
+/*チェックボックス等は非表示に*/
+.nav-unshown {
+    display:none;
+  }
+  
+  /*アイコンのスペース*/
+  #nav-open {
+    display: inline-block;
+    width: 30px;
+    height: 22px;
+    vertical-align: middle;
+  }
+  
+  /*ハンバーガーの形をCSSで表現*/
+  #nav-open span, #nav-open span:before, #nav-open span:after {
+    position: absolute;
+    height: 2px;/*線の太さ*/
+    width: 25px;/*長さ*/
+    border-radius: 3px;
+    background: #fff;
+    display: block;
+    content: '';
+    cursor: pointer;
+  }
+  #nav-open span:before {
+    bottom: -8px;
+  }
+  #nav-open span:after {
+    bottom: -16px;
+  }
+  
+  /*閉じる用の薄黒箇所*/
+  #nav-close {
+    display: none;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0;
+    transition: .3s ease-in-out;
+  }
+  
+  /*メニューの中身*/
+  #nav-content {
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 90%;
+    max-width: 330px;/*最大幅（お好みで調整を）*/
+    height: 100%;
+    background: #fff;
+    transition: .3s ease-in-out;
+    -webkit-transform: translateX(-105%);
+    transform: translateX(-105%);
+    background-color: #2a6bbf;
+  }
+  
+#header .headerInner ul.sp-menu{
+    display: block;
+    margin: auto;
+    padding-top: 50px;
+  }
+#header .headerInner ul.sp-menu li{  
+    padding-bottom: 20px;
+  }
+  
+  /*チェックがついたら表示させる*/
+  #nav-input:checked ~ #nav-close {
+    display: block;
+    opacity: .5;
+  }
+  
+  #nav-input:checked ~ #nav-content {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+    box-shadow: 6px 0 25px rgba(0,0,0,.15);
+  }
+}
+
+#header .headerInner ul {
+    display: flex;
+    list-style: none;
+    margin: 10px 20px;
+}
+@media screen and (max-width: 765px) {
+    #header .headerInner ul.menu {
+       display: none;
+    }
+}
+#header .headerInner ul > li {
+    height: 100%;
+    align-self: stretch;
+    margin-left: 2px;
+    font-size: 18px;
+    padding-left: 10px;
+}
+#header .headerInner .info-img,
+#header .headerInner .item-img {
+    position: absolute;
+    top: 100px;
+}
+#header .headerInner .info-img {
+    left: 5%;
+}
+@media screen and (max-width: 765px) {
+    #header .headerInner .info-img {
+        left: 0;
+        right: 0;
+        top: 80px;
+        margin: auto;
+        width: 400px;
+        text-align: center;
+    }
+}
+#header .headerInner .cosmic-watch {
+}
+@media screen and (max-width: 765px) {
+    #header .headerInner .cosmic-watch {
+        width: 300px;
+        margin: auto;
+    }
+    #header .headerInner .cosmic-watch img {
+        width: 300px;
+    }
+}
+#header .headerInner .sky-text {
+    max-width: 400px;
+    text-align: center;
+    margin: auto;
+}
+@media screen and (max-width: 765px) {
+    #header .headerInner .sky-text {
+        width: 300px;
+        max-width: 300px;
+        margin: auto;
+    }
+    #header .headerInner .sky-text img {
+        width: 300px;
+    }
+ }
+#header .headerInner .info-img > ul {
+    max-width: 400px;
+    margin: 20px auto;
+}
+@media screen and (max-width: 765px) {
+    #header .headerInner .info-img > ul {
+        justify-content: center;
+    }
+    #header .headerInner .info-img > ul li {
+        padding: 0;
+    }
+    #header .headerInner .info-img > ul li img {
+        width: 97%;
+    }
+}
+#header .headerInner .info-img > ul li a {
+    transition: .8s;
+}
+#header .headerInner .info-img > ul li a:hover {
+    opacity: 0.6;
+}
+#header .headerInner .item-img {
+    right: 5%;
+}
+@media screen and (max-width: 765px) {
+    #header .headerInner .item-img {
+        right: 0;
+        left: 0;
+        top: 370px;
+        width: 300px;
+        height: 100%;
+        margin: auto;
+        text-align: center;
+    }
+    #header .headerInner .item-img img{
+        width: 300px;
+    }
+}
+
+.wrap {
+    margin: auto;
+    padding: 0 20px;
+    max-width: 1200px;
+}
+
+.content {
+    margin: auto 0;
+    max-width: 100%;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.content .content-cat {
+    margin: 60px auto;
+}
+
+.content #about p {
+    padding-bottom: 40px;
+}
+.content .about-photo {
+    display: flex;
+    flex-direction:row-reverse;
+    justify-content:space-between;
+    max-width: 100%;
+    margin: 80px auto auto;
+}
+@media screen and (max-width: 765px) {
+    .content .about-photo {
+        display: block;
+        margin-top: 0;
+    }
+}
+.content .about-photo img {
+    max-width: 25%;
+    padding: 0;
+    margin: 0;
+}
+@media screen and (max-width: 765px) {
+    .content .about-photo img {
+        max-width: 49%;
+    }
+}
+.content #course .txt {
+    margin-bottom: 60px;
+}
+.content #course > ul {
+    display: flex;
+    align-items: stretch;
+    max-width: 1200px;
+}
+@media screen and (max-width: 765px) {
+    .content #course > ul {
+        display: block;
+        max-width: 100%;
+        width: 100%;
+    }
+}
+@media screen and (max-width: 765px) {
+    .content #course > ul {
+        margin-bottom: 30px;
+    }
+}
+.content #course > ul.course-detail {
+    flex-direction: row-reverse;
+    overflow: hidden;
+}
+.content #course > ul li {
+    width : 50%;
+ }
+ @media screen and (max-width: 765px) {
+    .content #course > ul li{
+        width: 100%;
+    }
+}
+.content #course > ul li img {
+    width: 100%;
+    vertical-align: top;
+}
+.content #course > ul li h3 {
+    font-size: 18px;
+    font-weight: bolder;
+    padding: 0 0 20px;
+ }
+ @media screen and (max-width: 765px) {
+    .content #course > ul li h3 {
+        padding-top: 20px;
+     }
+}
+.content #course > ul li p {
+    padding: 0 50px;
+ }
+ @media screen and (max-width: 765px) {
+    .content #course > ul li p {
+        padding: 0 50px 30px;
+     }
+}
+.content #course > ul li:nth-child(2) {
+    background-color: #fafafa;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    justify-content: center;
+}
+@media screen and (max-width: 765px) {
+    .content #course > ul li:nth-child(2){
+        width: 100%;
+    }
+}
+
+.content .news-feed {
+    display: flex;
+    justify-content: center; 
+    text-align: left;
+    margin-bottom: 60px;
+}
+@media screen and (max-width: 765px) {
+    .content .news-feed  {
+        width: 90%;
+        display: block;
+        margin: auto auto 30px;
+    }
+}
+.content .news-feed a .news-detail {
+    color: #222;
+    text-decoration: none;
+    transition: 1.0;
+}
+.content .news-feed a .news-detail:hover {
+    color: #2a6bbf;
+}
+.content .news-feed a .news-detail img {
+    width: 100%;
+    transition: 1.0;
+}
+.content .news-feed a .news-detail img:hover {
+    opacity: 0.7;
+}
+.content .news-feed .news-detail {
+    width: 300px;
+}
+@media screen and (max-width: 765px) {
+    .content .news-feed .news-detail {
+        width: 100%;
+    }
+}
+.content .news-feed a:nth-child(2) {
+    margin: 0 30px;
+}
+.content .news-feed .day {
+    display: block;
+    padding: 5px 0;
+    font-size: 12px;;
+}
+
+.content #access {
+    background-color: #fafafa;
+    padding: 60px 0;
+}
+.content #access .access-detail {
+    padding: 60px 0 0;
+}
+.content #access .detail-txt {
+    margin: auto;
+    text-align: left;
+}
+.content #access .detail-txt {
+    margin: auto;
+    text-align: left;
+}
+.content #access .detail-txt tbody tr th {
+    width: 30%;
+    height: 50px;
+}
+@media screen and (max-width: 765px) {
+    .content #access .detail-txt tbody tr th,
+    .content #access .detail-txt tbody tr td {
+        padding: 0 10px;
+        font-size: 13px;
+    }
+}
+
+.content .contact-txt span {
+    font-size: 12px;
+}
+.content .contact-form table {
+    /* width: 400px; */
+    margin: 0 auto 30px;
+    font-size: 14px;
+}
+.content .contact-form table th,
+.content .contact-form table td { 
+    border: solid 1px #bfbfbf;
+    text-align: left;
+    min-height: 36px;
+}
+.content .contact-form table th { 
+    border-left: none;
+    width: 240px;
+    padding: 20px 64px 20px 16px;
+}
+@media screen and (max-width: 765px) {
+    .content .contact-form table th  { 
+        width: 50%;
+        padding: 20px;
+        font-size: 14px;
+    }
+}
+.content .contact-form table td { 
+    border-right: none;
+    padding: 20px 8px;
+    vertical-align:middle;
+    width: 328px;
+}
+@media screen and (max-width: 765px) {
+    .content .contact-form table td { 
+        vertical-align:middle;
+        width: 50%;
+    }
+}
+.content .contact-form table td input,
+.content .contact-form table td select,
+.content .contact-form table td.shousai textarea {  
+    width: 400px;
+}
+@media screen and (max-width: 765px) {
+    .content .contact-form table td input,
+    .content .contact-form table td select,
+    .content .contact-form table td.shousai textarea  {
+        width: 200px;
+    }
+}
+.content .contact-form table td.shousai textarea {  
+    height: 100px;
+}
+.content .contact-form table td.douki input { 
+    width: 10px;
+}
+.content .contact-form table td.douki p { 
+    padding-bottom: 24px;
+}
+.content .btn {
+    width: 300px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    margin: auto;
+    background-color: #2a6bbf;
+    color: #fff;
+    border-style: none;
+    transition: 1.0s;
+    cursor: pointer;
+}
+.content .btn:hover {
+    opacity: 0.7;
+}
+
+#footer {
+    background-color: #707070;
+    padding: 20px 0;
+    margin: 140px auto 0;
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+    width: 100%;
+}
